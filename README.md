@@ -1160,7 +1160,7 @@ $ docker run -p4000:80 -v $PWD/www:/www  busybox httpd -f -h /www -v
 
 Visit the url http://localhost:4000 to check that it works fine.
 
-Now login to the nodes (kube-node-2 and kube-node-1) and create this /www directory with the index.html inside, which should contain the name of the node "<h1>Hello from kube-node-1</h1>".
+Now login to the nodes (kube-node-2 and kube-node-1) and create this /www directory with the index.html inside, which should contain the name of the node "Hello from kube-node-1".
 
 Now deploy this container in the cluster:
 
