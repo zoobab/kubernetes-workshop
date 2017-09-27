@@ -553,12 +553,12 @@ FOO is empty
 
 You should stop one container and see it coming back
 
-# Run one nginx on your cluster
-# Identify on which node it runs
-# Go on the shell (for kubeadm: $ docker exec -it kube-node-1 bash) (for minikube: $ minikube ssh) and get the ouput of "docker ps"
-# Search for nginx
-# Stop the container (for ex: $ docker stop 6598a01726a8)
-# Watch the output of "docker ps" or "watch docker ps" and see it coming back after some seconds, being rescheduled by the master
+* Run one nginx on your cluster
+* Identify on which node it runs
+* Go on the shell (for kubeadm: $ docker exec -it kube-node-1 bash) (for minikube: $ minikube ssh) and get the ouput of "docker ps"
+* Search for nginx
+* Stop the container (for ex: $ docker stop 6598a01726a8)
+* Watch the output of "docker ps" or "watch docker ps" and see it coming back after some seconds, being rescheduled by the master
 
 # Pod re-scheduling
 
@@ -566,10 +566,10 @@ You should stop one container and see it coming back
 
 If one node is down (ex hardware failure), observe that the master reschedules the pod to the other node
 
-# Launch one nginx pod like before
-# Node down on which of the node it runs
-# Stop one of the nodes (fox ex: $ docker stop kube-node-1)
-# Watch the pod being rescheduled to the other node (in this ex kube-node-2) and note down the time it takes.
+* Launch one nginx pod like before
+* Node down on which of the node it runs
+* Stop one of the nodes (fox ex: $ docker stop kube-node-1)
+* Watch the pod being rescheduled to the other node (in this ex kube-node-2) and note down the time it takes.
 
 # Rollout and Rollback
 
