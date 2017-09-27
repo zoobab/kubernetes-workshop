@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-httpd-volume-hostpath
+spec:
+  containers:
+    - name: busybox-httpd-volume-hostpath
+      image: busybox
+      args:
+        - httpd
+        - -f
+        - -h
+        - /www
+        - -v
+      volumeMounts:
+        - name: www
+          mountPath: /www
+  volumes:
+    - name: www
+      hostPath:
+        path: /www

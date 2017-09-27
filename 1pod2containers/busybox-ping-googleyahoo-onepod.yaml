@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ping-googleyahoo-onepod
+spec:
+  containers:
+  - name: busybox-ping-google
+    image: busybox
+    args:
+    - ping
+    - google.com
+  - name: busybox-ping-yahoo
+    image: busybox
+    args:
+    - ping
+    - yahoo.com

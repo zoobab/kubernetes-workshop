@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: server
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    volumeMounts:
+    - mountPath: /mypath/
+      name: git-volume
+      subPath: "configs"
+  volumes:
+  - name: git-volume
+    gitRepo:
+      repository: "https://github.com/surajssd/hitcounter"
+      revision: "9fd11822b822c94853b1c74ceb53adb8e1d2cfc8"

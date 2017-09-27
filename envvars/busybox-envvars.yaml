@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-envvars
+spec:
+  containers:
+  - name: busybox-envvars
+    image: zoobab/envvars
+    env:
+     - name: FOO
+       value: hellofromk8s

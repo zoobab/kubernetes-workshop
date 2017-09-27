@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ping-google
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    args:
+    - ping
+    - google.com
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-ping-yahoo
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    args:
+    - ping
+    - yahoo.com
