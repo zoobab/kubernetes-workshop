@@ -18,7 +18,7 @@ If you are looking for Kubernetes consulting services, you can contact me at zoo
 
 Explain here the typical K8S architecture.
 
-[[=image http://blog.arungupta.me/wp-content/uploads/2015/01/kubernetes-key-concepts.png]]
+![k8s arch](http://blog.arungupta.me/wp-content/uploads/2015/01/kubernetes-key-concepts.png)
 
 Machines:
 * Etcd
