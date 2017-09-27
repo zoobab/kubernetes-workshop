@@ -1,4 +1,4 @@
-# Kubernetes workshop for newbies
+# Kubernetes workshop
 
 Examples for the Kubernetes workshop originally located at:
 
