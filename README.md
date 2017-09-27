@@ -1144,7 +1144,7 @@ FOO is hellofromk8s
 
 # Mount a volume from the host bis
 
-Let's create a directory called "www" with an index.html in there containing "<h1>Hello from Brussels!</h1>":
+Let's create a directory called "www" with an index.html in there containing '<h1>Hello from Brussels!</h1>':
 
 ```
 $ mkdir www
