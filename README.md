@@ -6,11 +6,12 @@ http://www.zoobab.com/kubernetes-workshop
 
 This workshop was given multiple times at:
 
-* Meetup Docker Belgium in Brussels
-* Meetup Docker Belgium in Ghent
-* SHA2017 in Zeewolde (2 days)
-* Software Freedom Day at HSBXL in Brussels
+* Meetup Docker Belgium in Brussels: https://www.meetup.com/Docker-Belgium/events/240356311/
+* Meetup Docker Belgium in Ghent: https://www.meetup.com/Docker-Belgium/events/240475061/
+* SHA2017 in Zeewolde (2 days): https://wiki.sha2017.org/w/Session:KubernetesDockerClusterWorkshop
+* Software Freedom Day at HSBXL in Brussels: https://hsbxl.be/Software_Freedom_Day_2017
 * Some tech companies
+* Video log of the Ghent event by Thijs Feryn: https://www.youtube.com/watch?v=y4tbQCFj7Ps
 
 # Support
 
