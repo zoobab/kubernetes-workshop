@@ -258,11 +258,11 @@ kube-system   kubernetes-dashboard-2396447444-08xg3   1/1       Running   0     
 
 # Run nginx via the webinterface
 
-# Note that we use a smaller image "nginx:alpine" instead of the image "nginx"
-# Go to "Workloads -> Deployment -> Create -> Deploy a Containerized App -> Appname: "nginxalpine" -> Container image: "nginx:alpine" -> Number of pods: 1 -> Service: none -> Deploy"
-# You should have a pod running in the name like "nginxalpine-786442954-w20fj" -> Click on it -> Get its IP address (Node: IP: 10.192.3.3) and its node (Node: kube-node-2)
-# Point your browser to 10.192.3.3, you should see the nginx frontpage. You should also visit the "View logs" and check that you see some traffic.
-# In the case you do not reach the nginx frontpage, login on the kube-master, and then run "curl http://10.192.3.3"
+* Note that we use a smaller image "nginx:alpine" instead of the image "nginx"
+* Go to "Workloads -> Deployment -> Create -> Deploy a Containerized App -> Appname: "nginxalpine" -> Container image: "nginx:alpine" -> Number of pods: 1 -> Service: none -> Deploy"
+* You should have a pod running in the name like "nginxalpine-786442954-w20fj" -> Click on it -> Get its IP address (Node: IP: 10.192.3.3) and its node (Node: kube-node-2)
+* Point your browser to 10.192.3.3, you should see the nginx frontpage. You should also visit the "View logs" and check that you see some traffic.
+* In the case you do not reach the nginx frontpage, login on the kube-master, and then run "curl http://10.192.3.3"
 
 # Run nginx via kubectl
 
