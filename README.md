@@ -24,7 +24,7 @@ Explain here the typical K8S architecture.
 ![k8s arch](http://blog.arungupta.me/wp-content/uploads/2015/01/kubernetes-key-concepts.png)
 
 Machines:
-* Etcd
+* Etcd (not shown in the diagram)
 * Master
 * Minion
 
