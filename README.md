@@ -987,7 +987,7 @@ $ kubectl logs -f busybox-ping-googleyahoo-onepod -c busybox-ping-yahoo
 
 # Mount an empty volume
 
-First of all, you can mount an empty directory using "emptydir".
+First of all, you can mount an empty directory using "emptydir", which is not gonna be persistent.
 
 ```
 apiVersion: v1
@@ -999,10 +999,10 @@ spec:
   - name: redis
     image: redis
     volumeMounts:
-    - name: redis-persistent-storage
+    - name: redis-notpersistent-storage
       mountPath: /data/redis
   volumes:
-  - name: redis-persistent-storage
+  - name: redis-notpersistent-storage
     emptyDir: {}
 ```
 
