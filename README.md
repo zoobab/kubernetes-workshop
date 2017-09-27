@@ -1,12 +1,20 @@
 # About
 
-Examples for the Kubernetes workshop located at:
+Examples for the Kubernetes workshop originally located at:
 
 http://www.zoobab.com/kubernetes-workshop
 
+This workshop was given multiple times at:
+
+* Meetup Docker Belgium in Brussels
+* Meetup Docker Belgium in Ghent
+* SHA2017 in Zeewolde (2 days)
+* Software Freedom Day at HSBXL in Brussels
+* Some tech companies
+
 # Support
 
-If you are looking for Kubernetes consulting services, you can contact me at zoobab AT gmail.com.
+If you are looking for Kubernetes consulting or training services, you can contact me at zoobab AT gmail.com.
 
 # K8S architecture
 
