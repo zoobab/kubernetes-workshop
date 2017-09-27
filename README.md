@@ -10,11 +10,11 @@ Content
 
 [[toc]]
 
-+ Support
+# Support
 
 If you are looking for Kubernetes consulting services, you can contact me at zoobab AT gmail.com.
 
-+ K8S architecture
+# K8S architecture
 
 Explain here the typical K8S architecture.
 
@@ -33,9 +33,9 @@ Concepts:
 * pausecontainer
 * secrets
 
-+ Install kubeadm-dind-cluster AND/OR minikube
+# Install kubeadm-dind-cluster AND/OR minikube
 
-++ Install kubeadm-dind (linux)
+## Install kubeadm-dind (linux)
 
 We gonna use [https://github.com/Mirantis/kubeadm-dind-cluster kubeadm-dind-cluster], which is simulating a Kubernetes cluster with 3 containers:
 
@@ -104,7 +104,7 @@ kube-node-2   Ready     2h        v1.6.2
 
 Visit the webinterface to test that it is running fine.
 
-++ Install minikube (linux,osx,windows)
+## Install minikube (linux,osx,windows)
 
 Minikube runs a k8s cluster in a virtualbox machine (you need virtualbox installed on your system). Minikube has the advantage to run on Linux/OSX/Windows, but is built with one machine (all in one), and it is not appropriate to test the resilience of your application if one node is down. We will mention when examples cannot be run in Minikube.
 
@@ -144,7 +144,7 @@ Opening kubernetes dashboard in default browser... (http://192.168.99.100:30000/
 
 You need to install kubectl as well.
 
-+ Visit the web interface
+# Visit the web interface
 
 For kubeadm-dind-cluster, visit http://localhost:8080/ui .
 For minikube, visit "$ minikube dashboard" which gonna open a web browser at http://192.168.99.100:3000.
@@ -153,7 +153,7 @@ Quickly explain what each item means.
 
 Show the multiple nodes difference between kubeadm and minikube.
 
-+ Basic commands
+# Basic commands
 
 Kubectl command is available inside the kube-master container (dind):
 
@@ -227,7 +227,7 @@ country2-2907442922-1qd7b   0/1       ImagePullBackOff   0         22m
 
 Some more interesting commands on the cheatsheet: https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/
 
-+ When your cluster is started
+# When your cluster is started
 
 When your cluster is started, you should not see any pod running:
 
@@ -262,7 +262,7 @@ kube-system   kube-scheduler-kube-master              1/1       Running   7     
 kube-system   kubernetes-dashboard-2396447444-08xg3   1/1       Running   0          29m       10.192.2.1   kube-node-1
 ```
 
-+ Run nginx via the webinterface
+# Run nginx via the webinterface
 
 # Note that we use a smaller image "nginx:alpine" instead of the image "nginx"
 # Go to "Workloads -> Deployment -> Create -> Deploy a Containerized App -> Appname: "nginxalpine" -> Container image: "nginx:alpine" -> Number of pods: 1 -> Service: none -> Deploy"
@@ -270,7 +270,7 @@ kube-system   kubernetes-dashboard-2396447444-08xg3   1/1       Running   0     
 # Point your browser to 10.192.3.3, you should see the nginx frontpage. You should also visit the "View logs" and check that you see some traffic.
 # In the case you do not reach the nginx frontpage, login on the kube-master, and then run "curl http://10.192.3.3"
 
-+ Run nginx via kubectl
+# Run nginx via kubectl
 
 Run an nginx named "my-nginx" using the Docker Hub image "nginx:alpine":
 ```
@@ -340,7 +340,7 @@ drwxr-xr-x  13 root root 4096 Jun 19 21:49 usr
 drwxr-xr-x   1 root root 4096 May 30 17:09 var
 ```
 
-+ Load balancing built-in
+# Load balancing built-in
 
 Kubernetes uses a TCP/UDP load balancer (kube-proxy) to dispatch the traffic between "replicated" pods. We can launch 2 replicates on nginx:
 
@@ -385,7 +385,7 @@ $ kubectl logs -f my-nginx-858393261-h3xw9
 10.192.0.2 - - [20/Jun/2017:21:17:38 +0000] "GET / HTTP/1.1" 200 612 "-" "curl/7.47.0" "-"
 ```
 
-+ A simple Nodejs application
+# A simple Nodejs application
 
 Now that we know how to deploy a pre-built app, let’s create our own and deploy it.
 
@@ -486,7 +486,7 @@ Hello World!
 
 OK, we wrote our own simple web service, containerized it and deployed it to a Kubernetes cluster!
 
-+ Upscale and Downscale
+# Upscale and Downscale
 
 You can manually upscale or downscale the number of nginx instances you want on your cluster.
 
@@ -533,7 +533,7 @@ my-nginx-1570827950-vxxz1   0/1       ContainerCreating   0          6s
 my-nginx-1570827950-wz79h   0/1       ContainerCreating   0          6s
 ```
 
-+ Replace the running image
+# Replace the running image
 
 You can replace the running image used in your deployment by another one:
 
@@ -555,7 +555,7 @@ FOO is empty
 [...]
 ```
 
-+ Pod scheduling
+# Pod scheduling
 
 You should stop one container and see it coming back
 
@@ -566,7 +566,7 @@ You should stop one container and see it coming back
 # Stop the container (for ex: $ docker stop 6598a01726a8)
 # Watch the output of "docker ps" or "watch docker ps" and see it coming back after some seconds, being rescheduled by the master
 
-+ Pod re-scheduling
+# Pod re-scheduling
 
 (example only valid for kubeadm, which has 2 minions nodes)
 
@@ -577,7 +577,7 @@ If one node is down (ex hardware failure), observe that the master reschedules t
 # Stop one of the nodes (fox ex: $ docker stop kube-node-1)
 # Watch the pod being rescheduled to the other node (in this ex kube-node-2) and note down the time it takes.
 
-+ Rollout and Rollback
+# Rollout and Rollback
 
 The power of Deployments comes from their ability to do smart upgrades and rollbacks when something goes wrong.
 
@@ -803,7 +803,7 @@ REVISION	CHANGE-CAUSE
 
 The pods are also back and running with the previous working version (check that with curl).
 
-+ 1 pod with 1 container
+# 1 pod with 1 container
 
 We gonna deploy a container which is doing a simple "busybox ping localhost" command. This "cat" shell command will write a file named "busybox-ping-localhost.yaml".
 
@@ -863,7 +863,7 @@ $ kubectl delete pod busybox-ping-localhost
 pod "busybox-ping-localhost" deleted
 ```
 
-+ 2 pods with 1 container each
+# 2 pods with 1 container each
 
 A little reminder on how busybox works:
 
@@ -944,7 +944,7 @@ If you delete one pod, the other one will still run:
 $ kubectl delete pod busybox-ping-google
 ```
 
-+ 1 pod with 2 containers
+# 1 pod with 2 containers
 
 Now do a "1 pod with 2 containers" yaml file:
 
@@ -982,7 +982,7 @@ $ kubectl logs -f busybox-ping-googleyahoo-onepod -c busybox-ping-yahoo
 64 bytes from 216.58.209.238: seq=269 ttl=61 time=22.258 ms
 ```
 
-+ Mount an empty volume
+# Mount an empty volume
 
 First of all, you can mount an empty directory using "emptydir".
 
@@ -1005,7 +1005,7 @@ spec:
 
 Go on the shell of the node, find the docker container running it, and then go inside via "docker exec -it $CTID bash", and go to "cd /data/redis", it should be empty.
 
-+ Mount a volume from the host
+# Mount a volume from the host
 
 An example how to mount a volume from the host with redis:
 
@@ -1041,7 +1041,7 @@ root@kube-node-2:/bin#
 
 You should be able to see that file in the running container in /tmp/bin/file.
 
-+ Use an environment variable
+# Use an environment variable
 
 (Inspired from http://serverascode.com/2014/05/29/environment-variables-with-docker.html)
 
@@ -1148,7 +1148,7 @@ FOO is hellofromk8s
 FOO is hellofromk8s
 ```
 
-+ Mount a volume from the host bis
+# Mount a volume from the host bis
 
 Let's create a directory called "www" with an index.html in there containing "<h1>Hello from Brussels!</h1>":
 
@@ -1226,7 +1226,7 @@ $ watch kubectl get pods -o wide
 
 ```
 
-+ Custom nginx.conf via ConfigMap
+# Custom nginx.conf via ConfigMap
 
 Explain how to run nginx with a custom nginx.conf config file that lists the root filesystem of the container.
 
@@ -1357,7 +1357,7 @@ lrwxrwxrwx    1 root     root            17 Jun 20 19:28 nginx.conf -> ..data/ng
 /etc/nginx/conf.d #
 ```
 
-+ CI of the poor
+# CI of the poor
 
 Use case is myimage:latest which is built from HEAD master at each commit, and then pushed to the Docker Hub registry (or a local one on port 5000 HTTP).
 
@@ -1369,10 +1369,10 @@ Find a way to get it updated on the cluster:
 * https://github.com/zoobab/docker-ls/tree/master/scripts (registry-lslayers outputs the sha256 of the image)
 * https://github.com/rusenask/keel
 
-+ Multi-tier application: Guestbook
+# Multi-tier application: Guestbook
 
 https://github.com/kubernetes/kubernetes/tree/master/examples/guestbook
 
-+ Links
+# Links
 
 * https://github.com/sebgoa/oreilly-kubernetes
