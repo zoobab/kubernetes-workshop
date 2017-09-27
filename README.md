@@ -449,8 +449,8 @@ Deploy the App
 Now you can ship it:
 
 ```
-$ kubectl run hello-nodejs --image=hello-nodejs:v1 --port=8080
-deployment "hello-nodejs" created
+$ kubectl run hello-node --image=hello-node:v1 --port=8080
+deployment "hello-node" created
 ```
 
 Let’s confirm by checking the deployment and pods
@@ -458,7 +458,7 @@ Let’s confirm by checking the deployment and pods
 ```
 $ kubectl get deployments
 NAME           DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-hello-nodejs   1         1         1            1           1m
+hello-node   1         1         1            1           1m
 $ kubectl get pods
 NAME                          READY     STATUS    RESTARTS   AGE
 hello-node-2686040790-0t8q4   1/1       Running   0          1m
@@ -467,8 +467,8 @@ hello-node-2686040790-0t8q4   1/1       Running   0          1m
 Now, let’s expose the new app:
 
 ```
-$ kubectl expose deployment hello-nodejs --type=NodePort
-service "hello-nodejs" exposed
+$ kubectl expose deployment hello-node --type=NodePort
+service "hello-node" exposed
 ```
 
 And confirm services…
@@ -476,14 +476,14 @@ And confirm services…
 ```
 $ kubectl get services
 NAME         CLUSTER-IP  EXTERNAL-IP  PORT(S)         AGE
-hello-nodejs 10.0.0.13   <nodes>      8080:32272/TCP  2m
+hello-node 10.0.0.13   <nodes>      8080:32272/TCP  2m
 kubernetes   10.0.0.1    <none>       443/TCP         1d
 ```
 
 And finally let’s confirm our nodejs service is functioning…
 
 ```
-$ curl $(minikube service hello-nodejs --url)
+$ curl $(minikube service hello-node --url)
 Hello World!
 ```
 
