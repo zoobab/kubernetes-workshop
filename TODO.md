@@ -1,3 +1,4 @@
+digitalocean 3 nodes setup with kubeadm
 namespaces
 PersistentVolumeClaim
 wordpress+mysql
