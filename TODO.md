@@ -1,4 +1,4 @@
-digitalocean 3 nodes setup with kubeadm
+digitalocean 3 nodes setup with kubeadm, tmux 
 namespaces
 PersistentVolumeClaim
 wordpress+mysql
