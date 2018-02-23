@@ -150,7 +150,7 @@ You need to install kubectl as well.
 # Visit the web interface
 
 For kubeadm-dind-cluster, visit http://localhost:8080/ui .
-For minikube, visit "$ minikube dashboard" which gonna open a web browser at http://192.168.99.100:3000.
+For minikube, visit "$ minikube dashboard" which gonna open a web browser at http://192.168.99.100:30000.
 
 Quickly explain what each item means.
 
