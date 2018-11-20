@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: ghost
+  name: ghostport
 spec:
   containers:
-  - name: ghost
+  - name: ghostport
     image: ghost
     ports:
       - containerPort: 2368
