@@ -31,7 +31,7 @@ spec:
         run: my-nginx
     spec:
       containers:
-      - image: bitnami/nginx
+      - image: nginx:alpine
         name: my-nginx
         ports:
         - containerPort: 80
