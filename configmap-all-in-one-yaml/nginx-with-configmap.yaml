@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: my-nginx-v1
+  name: my-nginx-v2
 data:
   default.conf: |
     server {
@@ -9,7 +9,7 @@ data:
         server_name  localhost;
 
         location / {
-            return 200 'Kubernetes is hot, time for a beer!\n';
+            return 200 'Kubernetes is hot, time for a beer, v2!\n';
         }
     }
 ---
@@ -42,4 +42,4 @@ spec:
       volumes:
        - name: config-volume
          configMap:
-           name: my-nginx-v1
+           name: my-nginx-v2
